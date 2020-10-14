@@ -206,11 +206,11 @@
       <version>1.4.7</version>
     </dependency>
 
-    <dependency>
-      <groupId>activation</groupId>
-      <artifactId>activation</artifactId>
-      <version>1.0.2</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>activation</groupId>-->
+      <!--<artifactId>activation</artifactId>-->
+      <!--<version>1.0.2</version>-->
+    <!--</dependency>-->
 
     <dependency>
       <groupId>commons-fileupload</groupId>

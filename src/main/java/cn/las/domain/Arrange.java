@@ -2,6 +2,13 @@ package cn.las.domain;
 
 import java.util.List;
 
+/**
+ * laboratory : 储存实验室对象
+ * user : 储存教师对象
+ * course ：储存课程对象
+ *
+ * 这些都可以在查询数据库"课程安排信息"的时候顺便查出来
+ */
 public class Arrange {
 
     private int id;
@@ -12,17 +19,17 @@ public class Arrange {
 
     private Course course;
 
+    private int laboratoryId;
+
+    private int userId;
+
+    private int courseId;
+
     private String weeks;
 
     private String sections;
 
     private String classes;
-
-    private List<Integer> lweeks;
-
-    private List<Integer> lsections;
-
-    private List<Integer> lclasses;
 
     @Override
     public String toString() {
@@ -34,9 +41,6 @@ public class Arrange {
                 ", weeks='" + weeks + '\'' +
                 ", sections='" + sections + '\'' +
                 ", classes='" + classes + '\'' +
-                ", lweeks=" + lweeks +
-                ", lsections=" + lsections +
-                ", lclasses=" + lclasses +
                 '}';
     }
 
@@ -46,14 +50,6 @@ public class Arrange {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Laboratory getLaboratory() {
-        return laboratory;
-    }
-
-    public void setLaboratory(Laboratory laboratory) {
-        this.laboratory = laboratory;
     }
 
     public User getUser() {
@@ -70,6 +66,30 @@ public class Arrange {
 
     public void setCourse(Course course) {
         this.course = course;
+    }
+
+    public int getLaboratoryId() {
+        return laboratoryId;
+    }
+
+    public void setLaboratoryId(int laboratoryId) {
+        this.laboratoryId = laboratoryId;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public int getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
     }
 
     public String getWeeks() {
@@ -96,45 +116,11 @@ public class Arrange {
         this.classes = classes;
     }
 
-    public List<Integer> getLweeks() {
-        if(weeks != null) {
-            String[] split = weeks.split(",");
-            for (int i = 0; i < split.length; i++) {
-                lweeks.add(Integer.valueOf(split[i]));
-            }
-        }
-        return lweeks;
+    public Laboratory getLaboratory() {
+        return laboratory;
     }
 
-    public void setLweeks(List<Integer> lweeks) {
-        this.lweeks = lweeks;
-    }
-
-    public List<Integer> getLsections() {
-        if(sections != null) {
-            String[] split = sections.split(",");
-            for (int i = 0; i < split.length; i++) {
-                lsections.add(Integer.valueOf(split[i]));
-            }
-        }
-        return lsections;
-    }
-
-    public void setLsections(List<Integer> lsections) {
-        this.lsections = lsections;
-    }
-
-    public List<Integer> getLclasses() {
-        if(classes != null) {
-            String[] split = classes.split(",");
-            for (int i = 0; i < split.length; i++) {
-                lclasses.add(Integer.valueOf(split[i]));
-            }
-        }
-        return lclasses;
-    }
-
-    public void setLclasses(List<Integer> lclasses) {
-        this.lclasses = lclasses;
+    public void setLaboratory(Laboratory laboratory) {
+        this.laboratory = laboratory;
     }
 }

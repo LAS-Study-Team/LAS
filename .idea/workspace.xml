@@ -24,24 +24,163 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="7362dc73-424a-4f17-b8fa-493c984a9c66" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/cn/las/domain/Arrange.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/cn/las/domain/Laboratory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/documents/数据库设计.md" beforeDir="false" afterPath="$PROJECT_DIR$/documents/数据库设计.md" afterDir="false" />
+<<<<<<< HEAD
+=======
+    <list default="true" id="ff838679-01ae-4378-a40d-a234b50dfad3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/LAS_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/LAS_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_0_9_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_21.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_9_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_jsr250_api_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_iharder_base64_2_3_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_6_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_6_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/las/service/LaboratoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/las/service/impl/LaboratoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/cn.las.mapper/CourseMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/cn.las.mapper/LaboratoryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1.war" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/classes/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/classes/cn/las/controller/CourseController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/classes/cn/las/dao/CourseDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/classes/cn/las/mapper/BookMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/classes/cn/las/service/BookService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/classes/cn/las/service/CourseService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/classes/cn/las/service/impl/BookServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/classes/cn/las/service/impl/CourseServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/classes/dbconfig.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/classes/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/classes/spring/spring-dao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/classes/spring/spring-mvc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/classes/spring/spring-service.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/classes/spring/spring-trans.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/activation-1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/aspectjweaver-1.6.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/base64-2.3.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/c3p0-0.9.1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/commons-fileupload-1.3.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/commons-io-2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/druid-1.1.21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/jackson-annotations-2.9.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/jackson-core-2.9.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/jackson-databind-2.9.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/jackson-module-jaxb-annotations-2.9.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/jsqlparser-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/jsr250-api-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/log4j-1.2.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/mail-1.4.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/mybatis-3.4.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/mybatis-spring-1.3.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/mysql-connector-java-8.0.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/pagehelper-5.1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/protobuf-java-3.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/slf4j-api-1.6.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/slf4j-log4j12-1.6.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/spring-aop-5.0.2.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/spring-beans-5.0.2.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/spring-context-5.0.2.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/spring-context-support-5.0.2.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/spring-core-5.0.2.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/spring-expression-5.0.2.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/spring-jcl-5.0.2.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/spring-jdbc-5.0.2.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/spring-orm-5.0.2.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/spring-test-5.0.2.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/spring-tx-5.0.2.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/spring-web-5.0.2.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/lib/spring-webmvc-5.0.2.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/LAS-0.0.1/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/cn.las.mapper/BookMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/cn/las/controller/CourseController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/cn/las/dao/CourseDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/cn/las/mapper/BookMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/cn/las/service/BookService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/cn/las/service/CourseService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/cn/las/service/impl/BookServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/cn/las/service/impl/CourseServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/dbconfig.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/spring-dao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/spring-mvc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/spring-service.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/spring-trans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LAS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/las/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/las/controller/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/las/mapper/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/las/mapper/CourseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/las/service/BookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/las/service/impl/BookServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn.las.mapper/BookMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LAS-0.0.1/WEB-INF/classes/cn.las.mapper/BookMapper.xml" afterDir="false" />
+>>>>>>> dev
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dbconfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dbconfig.properties" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/las/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/las/controller/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/las/dao/CourseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/las/dao/CourseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/las/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/las/service/CourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/las/service/impl/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/las/service/impl/CourseServiceImpl.java" afterDir="false" />
+>>>>>>> dev
+>>>>>>> dev
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="spring-beans.schema" />
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>serv</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,6 +204,7 @@
       </MavenImportingSettings>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="MavenRunner">
     <option name="jreName" value="1.8" />
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
@@ -73,11 +213,16 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+=======
+  <component name="ProjectId" id="1ipdtmoh6br3kO1f0v7LKXnYNvH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+>>>>>>> dev
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -101,6 +246,21 @@
     </key>
   </component>
   <component name="RunManager" selected="Maven.LAS">
+=======
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1602606717416" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="spring.boot" />
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.22">
+>>>>>>> dev
     <configuration name="LAS" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -126,8 +286,12 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
     <configuration name="LAS" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.39" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/LAS_war/" />
+=======
+    <configuration name="Tomcat 9.0.22" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.22" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+>>>>>>> dev
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="LAS:war">
@@ -145,7 +309,11 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
+<<<<<<< HEAD
         <option name="DEBUG_PORT" value="57246" />
+=======
+        <option name="DEBUG_PORT" value="56057" />
+>>>>>>> dev
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -201,7 +369,11 @@
     </configuration>
     <list>
       <item itemvalue="Maven.LAS" />
+<<<<<<< HEAD
       <item itemvalue="Tomcat Server.LAS" />
+=======
+      <item itemvalue="Tomcat Server.Tomcat 9.0.22" />
+>>>>>>> dev
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -209,17 +381,33 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7362dc73-424a-4f17-b8fa-493c984a9c66" name="Default Changelist" comment="" />
-      <created>1602586312529</created>
+      <changelist id="ff838679-01ae-4378-a40d-a234b50dfad3" name="Default Changelist" comment="" />
+      <created>1602603882626</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1602586312529</updated>
       <workItem from="1602586325037" duration="5415000" />
       <workItem from="1602592131612" duration="58000" />
       <workItem from="1602649069855" duration="2190000" />
       <workItem from="1602663985259" duration="4235000" />
+<<<<<<< HEAD
+=======
+      <updated>1602603882626</updated>
+      <workItem from="1602603884359" duration="3236000" />
+      <workItem from="1602608697348" duration="204000" />
+      <workItem from="1602608953222" duration="390000" />
+      <workItem from="1602647382528" duration="6437000" />
+      <workItem from="1602674332957" duration="1471000" />
+      <workItem from="1602676136775" duration="724000" />
+>>>>>>> dev
+=======
       <workItem from="1602684365974" duration="4122000" />
+<<<<<<< HEAD
       <workItem from="1602690737314" duration="893000" />
+=======
+>>>>>>> dev
+>>>>>>> dev
     </task>
     <servers />
   </component>
@@ -240,6 +428,7 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state x="599" y="329" key="#Tomcat_Server" timestamp="1602649179985">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -256,11 +445,64 @@
     <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1602668532622" />
     <state x="512" y="340" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1602590763642">
       <screen x="0" y="0" width="1536" height="824" />
+=======
+    <state x="231" y="55" key="#Project_Structure" timestamp="1602608803366">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="512" y="340" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1602590763642" />
-    <state x="553" y="278" width="429" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1602590782570">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="231" y="55" key="#Project_Structure/0.0.1500.960@0.0.1500.960" timestamp="1602608803366" />
+    <state x="527" y="377" key="#Tomcat_Server" timestamp="1602608840459">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
+    <state x="527" y="377" key="#Tomcat_Server/0.0.1500.960@0.0.1500.960" timestamp="1602608840459" />
+    <state x="206" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602608845887">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="206" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1602608845887" />
+    <state x="466" y="154" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602684775097">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="466" y="154" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1500.960@0.0.1500.960" timestamp="1602684775097" />
+    <state x="531" y="235" key="FileChooserDialogImpl" timestamp="1602661489169">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="531" y="235" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1602661489169" />
+    <state width="472" height="256" key="GridCell.Tab.0.bottom" timestamp="1602664621420">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="472" height="256" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1602664621420" />
+    <state width="472" height="256" key="GridCell.Tab.0.center" timestamp="1602664621420">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="472" height="256" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1602664621420" />
+    <state width="472" height="256" key="GridCell.Tab.0.left" timestamp="1602664621420">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="472" height="256" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1602664621420" />
+    <state width="472" height="256" key="GridCell.Tab.0.right" timestamp="1602664621420">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="472" height="256" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1602664621420" />
+    <state width="472" height="256" key="GridCell.Tab.1.bottom" timestamp="1602664621422">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="472" height="256" key="GridCell.Tab.1.bottom/0.0.1500.960@0.0.1500.960" timestamp="1602664621422" />
+    <state width="472" height="256" key="GridCell.Tab.1.center" timestamp="1602664621422">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="472" height="256" key="GridCell.Tab.1.center/0.0.1500.960@0.0.1500.960" timestamp="1602664621422" />
+    <state width="472" height="256" key="GridCell.Tab.1.left" timestamp="1602664621422">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="472" height="256" key="GridCell.Tab.1.left/0.0.1500.960@0.0.1500.960" timestamp="1602664621422" />
+    <state width="472" height="256" key="GridCell.Tab.1.right" timestamp="1602664621422">
+      <screen x="0" y="0" width="1500" height="960" />
+>>>>>>> dev
+    </state>
+    <state width="472" height="256" key="GridCell.Tab.1.right/0.0.1500.960@0.0.1500.960" timestamp="1602664621422" />
+    <state width="472" height="256" key="GridCell.Tab.2.bottom" timestamp="1602664621422">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+<<<<<<< HEAD
     <state x="553" y="278" width="429" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1602590782570" />
     <state x="605" y="188" key="FileChooserDialogImpl" timestamp="1602664379914">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -326,9 +568,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="753" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602664300791" />
+<<<<<<< HEAD
     <state x="425" y="187" key="run.anything.popup" timestamp="1602691338901">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1602691338901" />
+=======
+<<<<<<< HEAD
+=======
+    <state width="472" height="256" key="GridCell.Tab.2.bottom/0.0.1500.960@0.0.1500.960" timestamp="1602664621422" />
+    <state width="472" height="256" key="GridCell.Tab.2.center" timestamp="1602664621421">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="472" height="256" key="GridCell.Tab.2.center/0.0.1500.960@0.0.1500.960" timestamp="1602664621421" />
+    <state width="472" height="256" key="GridCell.Tab.2.left" timestamp="1602664621421">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="472" height="256" key="GridCell.Tab.2.left/0.0.1500.960@0.0.1500.960" timestamp="1602664621421" />
+    <state width="472" height="256" key="GridCell.Tab.2.right" timestamp="1602664621421">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="472" height="256" key="GridCell.Tab.2.right/0.0.1500.960@0.0.1500.960" timestamp="1602664621421" />
+    <state x="231" y="55" key="SettingsEditor" timestamp="1602649950752">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="231" y="55" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1602649950752" />
+>>>>>>> dev
+=======
+    <state x="425" y="187" key="run.anything.popup" timestamp="1602687407255">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1602687407255" />
+>>>>>>> dev
+>>>>>>> dev
   </component>
 </project>

@@ -1,5 +1,5 @@
 package cn.las.mapper;
 
-public interface BookMapper {
+public interface CourseMapper {
     int selectAll();
 }
