@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.las.mapper.Mapper">
+    
+    <!-- 变更实验室是否可用 -->
+    <update id="updateLaboratoryState" parameterType="java.lang.Integer">
+        update laboratory
+        set state=#{state} where id=#{id}
+    </update>
+
+</mapper>

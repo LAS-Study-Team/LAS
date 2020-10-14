@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.las.mapper.CourseMapper">
+
+    <!-- 根据教师id找到所有课程信息 -->
+    <select id="selectAll" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+        select * from arrange where userid=#{userid}
+    </select>
+
+    <!-- 通过id删掉排课 -->
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        delete from arrange where id=#{id}
+    </delete>
+
+    <!-- 通过id修改排课 -->
+    <update id="updateById" parameterType="java.lang.Integer">
+        update arrang
+        set laboratoryId=#{laboratoryId},userId=#{userId},courseId=#{courseId},weeks=#{weeks},sections=#{sections},classes=#{classes}
+        where id=#{id}
+    </update>
+
+    <!-- 增加排课 -->
+    <insert id="insertone" parameterType="">
+        insert into arrang(laboratoryId,userId,courseId,weeks,sections,classes)
+         values (#{laboratoryId},#{userId},#{courseId},#{weeks},#{sections},#{classes})
+    </insert>
+
+
+</mapper>
