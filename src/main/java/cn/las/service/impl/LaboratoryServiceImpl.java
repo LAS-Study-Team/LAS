@@ -11,15 +11,15 @@ public class LaboratoryServiceImpl implements LaboratoryService {
     @Autowired
     LaboratoryDao laboratoryDao;
 
-    public void updateLaboratoryState(int id) {
+    public void updateLaboratoryState(int id)throws Exception {
         laboratoryDao.updateLaboratoryState(id);
     }
 
-    public void updateLaboratoryPnum(int id) {
+    public void updateLaboratoryPnum(int id)throws Exception {
         laboratoryDao.updateLaboratoryPnum(id);
     }
 
-    public void updateLaboratoryType(int id) {
+    public void updateLaboratoryType(int id)throws Exception {
         laboratoryDao.updateLaboratoryType(id);
     }
 
