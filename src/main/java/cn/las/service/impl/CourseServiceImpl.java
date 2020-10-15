@@ -37,4 +37,8 @@ public class CourseServiceImpl implements CourseService {
     public List<Course> findAll() throws Exception {
         return courseDao.findAll();
     }
+
+    public void updateCourse(Course course) throws Exception {
+        courseDao.updateCourse(course);
+    }
 }
