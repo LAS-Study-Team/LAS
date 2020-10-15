@@ -1,5 +1,7 @@
 package cn.las.domain;
 
+import java.util.List;
+
 public class User {
     private int id;
 
@@ -9,6 +11,8 @@ public class User {
 
     private String teacher;
 
+    private List<Role> roles;
+
     @Override
     public String toString() {
         return "User{" +
@@ -16,6 +20,7 @@ public class User {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", teacher='" + teacher + '\'' +
+                ", roles=" + roles +
                 '}';
     }
 
@@ -49,5 +54,13 @@ public class User {
 
     public void setTeacher(String teacher) {
         this.teacher = teacher;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 }

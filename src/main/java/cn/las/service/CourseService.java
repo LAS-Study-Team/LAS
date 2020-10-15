@@ -16,4 +16,6 @@ public interface CourseService {
     void removeCourseByCourseName(String courseName) throws Exception;
 
     List<Course> findAll() throws Exception;
+
+    void updateCourse(Course course) throws Exception;
 }

@@ -1,10 +1,25 @@
 package cn.las.domain;
 
+import java.util.List;
+
+/**
+ * laboratory : 储存实验室对象
+ * user : 储存教师对象
+ * course ：储存课程对象
+ *
+ * 这些都可以在查询数据库"课程安排信息"的时候顺便查出来
+ */
 public class Arrange {
 
     private int id;
 
-    private int laboratory;
+    private Laboratory laboratory;
+
+    private User user;
+
+    private Course course;
+
+    private int laboratoryId;
 
     private int userId;
 
@@ -16,17 +31,17 @@ public class Arrange {
 
     private String classes;
 
-    public Arrange() {
-    }
-
-    public Arrange(int id, int laboratory, int userId, int courseId, String weeks, String sections, String classes) {
-        this.id = id;
-        this.laboratory = laboratory;
-        this.userId = userId;
-        this.courseId = courseId;
-        this.weeks = weeks;
-        this.sections = sections;
-        this.classes = classes;
+    @Override
+    public String toString() {
+        return "Arrange{" +
+                "id=" + id +
+                ", laboratory=" + laboratory +
+                ", user=" + user +
+                ", course=" + course +
+                ", weeks='" + weeks + '\'' +
+                ", sections='" + sections + '\'' +
+                ", classes='" + classes + '\'' +
+                '}';
     }
 
     public int getId() {
@@ -37,12 +52,28 @@ public class Arrange {
         this.id = id;
     }
 
-    public int getLaboratory() {
-        return laboratory;
+    public User getUser() {
+        return user;
     }
 
-    public void setLaboratory(int laboratory) {
-        this.laboratory = laboratory;
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public int getLaboratoryId() {
+        return laboratoryId;
+    }
+
+    public void setLaboratoryId(int laboratoryId) {
+        this.laboratoryId = laboratoryId;
     }
 
     public int getUserId() {
@@ -83,5 +114,13 @@ public class Arrange {
 
     public void setClasses(String classes) {
         this.classes = classes;
+    }
+
+    public Laboratory getLaboratory() {
+        return laboratory;
+    }
+
+    public void setLaboratory(Laboratory laboratory) {
+        this.laboratory = laboratory;
     }
 }

@@ -1,24 +1,20 @@
 package cn.las.domain;
 
 public class Laboratory {
+
     private int id;
+
     private String name;
+
     private String type;
+
     private int size;
+
     private String location;
+
     private int status;
 
-    public Laboratory(int id, String name, String type, int size, String location ,int status) {
-        this.id = id;
-        this.name = name;
-        this.type = type;
-        this.size = size;
-        this.location = location;
-        this.status= status;
-    }
-
-    public Laboratory() {
-    }
+    private String statusStr;
 
     @Override
     public String toString() {
@@ -29,6 +25,7 @@ public class Laboratory {
                 ", size=" + size +
                 ", location='" + location + '\'' +
                 ", status=" + status +
+                ", statusStr='" + statusStr + '\'' +
                 '}';
     }
 
@@ -78,5 +75,13 @@ public class Laboratory {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public String getStatusStr() {
+        return status == 0 ? "可用" : "禁用";
+    }
+
+    public void setStatusStr(String statusStr) {
+        this.statusStr = statusStr;
     }
 }
