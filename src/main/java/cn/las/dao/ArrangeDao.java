@@ -1,13 +1,12 @@
 package cn.las.dao;
 
 import cn.las.domain.Arrange;
+import org.apache.ibatis.annotations.*;
+import java.util.List;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
-
-import java.util.List;
-
 /**
  * 排课持久层
  */
@@ -24,7 +23,6 @@ public interface ArrangeDao {
             @Result(property = "laboratoryId", column = "laboratoryId"),
             @Result(property = "laboratoryId", column = "laboratoryId"),
             @Result(property = "laboratoryId", column = "laboratoryId")
-
     })
     List<Arrange> findAll() throws Exception;
 
@@ -39,7 +37,13 @@ public interface ArrangeDao {
             " values(#{laboratoryId},#{userId},#{courseId},#{weeks},#{sections},#{classes})")
     void addArrange(Arrange arrange) throws Exception;
 
+    List<Arrange> selectAll(@Param("userId") int userId)throws Exception;
 
+    void deleteById(@Param("courseId") int courseId)throws Exception;
 
+    void updateArrangeById(@Param("courseId") int courseId)throws Exception;
 
+    void insertone(Arrange arrange)throws Exception;
+
+    List<Arrange> findArrangeByLaboratoryId(@Param("laboratoryId") int laboratoryId)throws Exception;
 }
