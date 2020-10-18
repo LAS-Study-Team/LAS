@@ -19,6 +19,8 @@ public class Arrange {
 
     private Course course;
 
+    private List<IClass> iclasses;
+
     private int laboratoryId;
 
     private int userId;
@@ -122,5 +124,14 @@ public class Arrange {
 
     public void setLaboratory(Laboratory laboratory) {
         this.laboratory = laboratory;
+    }
+
+
+    public List<IClass> getIclasses() {
+        return iclasses;
+    }
+
+    public void setIclasses(List<IClass> iclasses) {
+        this.iclasses = iclasses;
     }
 }
