@@ -19,6 +19,11 @@ public class Arrange {
 
     private Course course;
 
+<<<<<<< HEAD
+=======
+    private List<IClass> iclasses;
+
+>>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
     private int laboratoryId;
 
     private int userId;
@@ -123,4 +128,16 @@ public class Arrange {
     public void setLaboratory(Laboratory laboratory) {
         this.laboratory = laboratory;
     }
+<<<<<<< HEAD
+=======
+
+
+    public List<IClass> getIclasses() {
+        return iclasses;
+    }
+
+    public void setIclasses(List<IClass> iclasses) {
+        this.iclasses = iclasses;
+    }
+>>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
 }

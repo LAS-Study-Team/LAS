@@ -3,7 +3,10 @@ package cn.las.service.impl;
 import cn.las.dao.ArrangeDao;
 import cn.las.domain.Arrange;
 import cn.las.service.ArrangeService;
+<<<<<<< HEAD
 import org.apache.ibatis.annotations.Param;
+=======
+>>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +23,7 @@ public class ArrangeServiceImpl implements ArrangeService {
         return arrangeDao.findAll();
     }
 
+<<<<<<< HEAD
     public void deleteArrangeByCourseId(int courseId)throws Exception{
         arrangeDao.deleteById(courseId);
     }
@@ -35,4 +39,8 @@ public class ArrangeServiceImpl implements ArrangeService {
     public List<Arrange> findArrangeByLaboratoryId(int laboratoryId)throws Exception{
         return arrangeDao.findArrangeByLaboratoryId(laboratoryId);
     }
+=======
+
+
+>>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
 }

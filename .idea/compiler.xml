@@ -10,7 +10,11 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+<<<<<<< HEAD
       <module name="LAS" target="1.8" />
+=======
+      <module name="LAS" target="7" />
+>>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
     </bytecodeTargetLevel>
   </component>
 </project>
