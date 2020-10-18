@@ -1,9 +1,7 @@
 package cn.las.dao;
 
 import cn.las.domain.User;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -20,4 +18,7 @@ public interface UserDao {
 
     @Select("select * from user")
     List<User> findAll() throws Exception;
+
+    @Update("update user set user.password=#{password} where user.username=#{username}")
+    void changePassword(@Param("username") String username, @Param("password") String password) throws Exception;
 }

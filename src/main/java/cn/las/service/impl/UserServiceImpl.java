@@ -29,4 +29,8 @@ public class UserServiceImpl implements UserService {
     public List<User> findAll() throws Exception {
         return userDao.findAll();
     }
+
+    public void changePassword(String username, String password) throws Exception {
+        userDao.changePassword(username, password);
+    }
 }
