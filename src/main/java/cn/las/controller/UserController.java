@@ -4,10 +4,7 @@ import cn.las.domain.Message;
 import cn.las.domain.User;
 import cn.las.service.UserService;
 import cn.las.utils.AESUtil;
-<<<<<<< HEAD
 import org.apache.log4j.Logger;
-=======
->>>>>>> dev
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -129,11 +126,7 @@ public class UserController {
     @RequestMapping(value = "addUser", method = RequestMethod.POST)
     @ResponseBody
     @Transactional(rollbackFor = Exception.class)
-<<<<<<< HEAD
     public Message addUser(@RequestBody User user) {
-=======
-    public Message addUser(@RequestBody User user) throws Exception {
->>>>>>> dev
         Message message = new Message();
 
         if(user.getUsername() == null || user.getPassword() == null || user.getTeacher() == null) {
@@ -196,59 +189,6 @@ public class UserController {
         if(username == null || oldPassword == null || newPassword == null) {
             message.setCode(501);
             message.setMessage("参数有误");
-            return message;
-        }
-
-        User user = userService.findByUsername(username);
-
-        // 验证当前用户是否存在
-        if(user == null) {
-            message.setCode(500);
-            message.setMessage("用户不存在");
-            return message;
-        }
-
-        String secretOldPswd = AESUtil.encrypt(oldPassword);
-        if(!secretOldPswd.equals(user.getPassword())) {
-            message.setCode(502);
-            message.setMessage("旧密码输入错误");
-            return message;
-        }
-
-        // 验证通过开始修改当前账户的密码
-        userService.changePassword(username, AESUtil.encrypt(newPassword));
-
-        message.setCode(200);
-        message.setMessage("修改密码成功");
-        return message;
-    }
-
-    /**
-     * @param datas  前端传输数据
-     *               {
-     *                  username: ...,
-     *                  new_password: ...,
-     *                  old_password:...
-     *               }
-     * @return
-     * @throws Exception
-     *
-     * 当抛出错误的的时候进行事务回滚
-     */
-    @RequestMapping(value = "changePassword", method = RequestMethod.POST)
-    @ResponseBody
-    @Transactional(rollbackFor = Exception.class)
-    public Message changePassword(@RequestBody Map<String, Object> datas) throws Exception {
-        Message message = new Message();
-
-        // 获取参数
-        String oldPassword = (String) datas.get("old_password");
-        String username = (String) datas.get("account");
-        String newPassword = (String) datas.get("new_password");
-
-        if(username == null || oldPassword == null || newPassword == null) {
-            message.setCode(501);
-            message.setMessage("参数不能为空");
             return message;
         }
 
