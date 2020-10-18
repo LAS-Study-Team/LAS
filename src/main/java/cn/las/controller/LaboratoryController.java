@@ -1,11 +1,8 @@
 package cn.las.controller;
 
-<<<<<<< HEAD
 import cn.las.domain.Message;
 import cn.las.service.LaboratoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-=======
->>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -13,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("laboratory")
 public class LaboratoryController {
 
-<<<<<<< HEAD
     @Autowired
     LaboratoryService laboratoryService;
 
@@ -32,7 +28,5 @@ public class LaboratoryController {
         message.setMessage("实验室状态更新成功");
         return message;
     }
-=======
->>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
 
 }

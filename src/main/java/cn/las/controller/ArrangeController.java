@@ -5,15 +5,11 @@ import cn.las.domain.Message;
 import cn.las.service.ArrangeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.*;
-=======
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
->>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
-
 import java.util.List;
 
 /**
@@ -37,10 +33,7 @@ public class ArrangeController {
         Message message = new Message();
         List<Arrange> all = arrangeService.findAll();
         message.setCode(200);
-<<<<<<< HEAD
         message.putData("AllArrange",all);
-=======
->>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
         message.setMessage("获取排课信息成功");
         return message;
     }
@@ -56,7 +49,6 @@ public class ArrangeController {
     @ResponseBody
     public Message addArrange(@RequestBody Arrange arrange) throws Exception {
         Message message = new Message();
-<<<<<<< HEAD
         arrangeService.insertone(arrange);
         message.setCode(200);
         message.setMessage("增加排课成功");
@@ -96,17 +88,10 @@ public class ArrangeController {
         arrangeService.updateArrangeByCourseId(courseId);
         message.setCode(200);
         message.setMessage("修改课程成功");
-=======
-
-
-
->>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
-
         return message;
     }
 
 
-<<<<<<< HEAD
     /**
      * @param laboratoryId 实验室id
      * @return  返回带有某实验室排课arranges的message
@@ -125,9 +110,5 @@ public class ArrangeController {
 
         return message;
     }
-
-=======
->>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
-
 
 }

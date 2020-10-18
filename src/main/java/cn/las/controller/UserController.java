@@ -3,25 +3,16 @@ package cn.las.controller;
 import cn.las.domain.Message;
 import cn.las.domain.User;
 import cn.las.service.UserService;
-<<<<<<< HEAD
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-=======
 import cn.las.utils.AESUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
->>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import java.util.List;
-<<<<<<< HEAD
-=======
 import java.util.Map;
->>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
 
 /**
  * @爱出bug的代码小白
@@ -58,13 +49,10 @@ public class UserController {
 
     /**
      * @param user 传输的用户数据
-<<<<<<< HEAD
-=======
      *             {
      *                  username:...,
      *                  password:...
      *             }
->>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
      * @return 返回登陆成功 | 失败信息
      * @throws Exception
      *
@@ -91,13 +79,9 @@ public class UserController {
             return  message;
         }
 
-<<<<<<< HEAD
-        if(!usr.getPassword().equals(user.getPassword())) {
-=======
         String encrypt = AESUtil.encrypt(user.getPassword());
         System.out.println(encrypt);
         if(!usr.getPassword().equals(encrypt)) {
->>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
             message.setCode(403);
             message.setMessage("登录失败");
             return  message;
@@ -123,25 +107,16 @@ public class UserController {
 
     /**
      * @param user 传输过来的用户信息
-<<<<<<< HEAD
-=======
      *             {
      *                  username:...,
      *                  password:...,
      *                  teacher:...
      *             }
->>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
      * @return 返回操作成功 | 失败数据
      * @throws Exception
      *
      * 1、非空验证
      * 2、添加用户
-<<<<<<< HEAD
-     */
-    @RequestMapping(value = "addUser", method = RequestMethod.POST)
-    @ResponseBody
-    public Message addUser(User user) throws Exception {
-=======
      *
      * 当出现添加用户过程当中抛出错误的时候，进行事务回滚
      */
@@ -149,7 +124,6 @@ public class UserController {
     @ResponseBody
     @Transactional(rollbackFor = Exception.class)
     public Message addUser(@RequestBody User user) throws Exception {
->>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
         Message message = new Message();
 
         if(user.getUsername() == null || user.getPassword() == null || user.getTeacher() == null) {
@@ -166,8 +140,6 @@ public class UserController {
         return message;
     }
 
-<<<<<<< HEAD
-=======
     /**
      * @param datas  前端传输数据
      *               {
@@ -220,6 +192,4 @@ public class UserController {
         message.setMessage("修改密码成功");
         return message;
     }
-
->>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
 }

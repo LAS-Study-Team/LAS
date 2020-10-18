@@ -13,9 +13,6 @@ public interface UserService {
     void deleteUserByUsername(String username) throws Exception;
 
     List<User> findAll() throws Exception;
-<<<<<<< HEAD
-=======
 
     void changePassword(String username, String password) throws Exception;
->>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
 }

@@ -225,8 +225,6 @@
       <version>2.3.8</version>
     </dependency>
 
-<<<<<<< HEAD
-=======
     <!--  导入AES加密算法依赖  -->
     <dependency>
       <groupId>org.apache.commons</groupId>
@@ -239,9 +237,6 @@
       <version>1.8</version>
     </dependency>
 
-
-
->>>>>>> f020a5f02153ae4a5da58744e046a0a719c1d9c0
   </dependencies>
 
   <build>
