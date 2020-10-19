@@ -9,8 +9,8 @@
         <module name="LAS" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8">
-      <module name="LAS" target="1.5" />
+    <bytecodeTargetLevel>
+      <module name="LAS" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

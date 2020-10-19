@@ -4,17 +4,29 @@
 <mapper namespace="cn.las.mapper.CourseMapper">
 
     <!-- 根据教师id找到所有课程信息 -->
+<<<<<<< HEAD
     <select id="selectAll" resultType="cn.las.domain.Arrange" parameterType="java.lang.Integer">
+=======
+    <select id="selectAllByTeacherId" resultType="cn.las.domain.Arrange" parameterType="java.lang.Integer">
+>>>>>>> 9678d55891996576cdba947d1aa268d3dec6e87e
         select * from arrange where userid=#{userid}
     </select>
 
     <!-- 通过课程id删掉排课 -->
+<<<<<<< HEAD
     <delete id="deleteById" parameterType="java.lang.Integer">
+=======
+    <delete id="deleteArrangeByCourseId" parameterType="java.lang.Integer">
+>>>>>>> 9678d55891996576cdba947d1aa268d3dec6e87e
         delete from arrange where id=#{id}
     </delete>
 
     <!-- 通过课程id修改排课 -->
+<<<<<<< HEAD
     <update id="updateById" parameterType="java.lang.Integer">
+=======
+    <update id="updateArrangeByCourseId" parameterType="java.lang.Integer">
+>>>>>>> 9678d55891996576cdba947d1aa268d3dec6e87e
         update arrang
         set laboratoryId=#{laboratoryId},userId=#{userId},courseId=#{courseId},weeks=#{weeks},sections=#{sections},classes=#{classes}
         where id=#{id}
@@ -30,7 +42,11 @@
 
 
     <!-- 根据实验室id找到当前实验室排课情况 -->
+<<<<<<< HEAD
     <select id="findById" parameterType="java.lang.Integer" resultType="cn.las.domain.Arrange">
+=======
+    <select id="findArrangeByLaboratoryId" parameterType="java.lang.Integer" resultType="cn.las.domain.Arrange">
+>>>>>>> 9678d55891996576cdba947d1aa268d3dec6e87e
         select * from arrange where laboratoryId=#{laboratoryId}
     </select>
 

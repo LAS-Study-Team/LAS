@@ -13,4 +13,6 @@ public interface UserService {
     void deleteUserByUsername(String username) throws Exception;
 
     List<User> findAll() throws Exception;
+
+    void changePassword(String username, String password) throws Exception;
 }
