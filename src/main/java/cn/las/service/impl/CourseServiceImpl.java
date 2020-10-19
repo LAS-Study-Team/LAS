@@ -2,6 +2,7 @@ package cn.las.service.impl;
 
 import cn.las.dao.CourseDao;
 import cn.las.domain.Course;
+import cn.las.mapper.CourseMapper;
 import cn.las.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,9 @@ public class CourseServiceImpl implements CourseService {
 
     @Autowired
     CourseDao courseDao;
+
+    @Autowired
+    CourseMapper courseMapper;
 
     public void addCourse(Course course) throws Exception {
         courseDao.addCourse(course);
@@ -40,5 +44,9 @@ public class CourseServiceImpl implements CourseService {
 
     public void updateCourse(Course course) throws Exception {
         courseDao.updateCourse(course);
+    }
+    
+    public List<Course> selectAll() throws Exception {
+        return courseMapper.selectAll();
     }
 }

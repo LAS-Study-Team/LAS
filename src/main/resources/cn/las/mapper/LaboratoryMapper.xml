@@ -4,19 +4,19 @@
 <mapper namespace="cn.las.dao.LaboratoryDao">
     
     <!-- 变更实验室是否可用 -->
-    <update id="updateLaboratoryStatus" parameterType="java.lang.Integer">
+    <update id="updateLaboratoryStatus">
         update laboratory
         set status=#{status} where id=#{id}
     </update>
 
     <!-- 变更实验室人数 -->
-    <update id="updateLaboratoryPnum" parameterType="java.lang.Integer">
+    <update id="updateLaboratoryPnum">
         update  laboratory
         set size=#{size} where id=#{id}
     </update>
 
     <!-- 变更实验室类型 -->
-    <update id="updateLaboratoryType" parameterType="java.lang.Integer">
+    <update id="updateLaboratoryType">
         update  laboratory
         set type=#{type} where id=#{id}
     </update>
