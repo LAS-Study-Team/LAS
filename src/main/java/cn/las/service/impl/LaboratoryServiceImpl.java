@@ -14,18 +14,6 @@ public class LaboratoryServiceImpl implements LaboratoryService {
     @Autowired
     LaboratoryDao laboratoryDao;
 
-<<<<<<< HEAD
-    public void updateLaboratoryState(int id)throws Exception {
-        laboratoryDao.updateLaboratoryState(id);
-    }
-
-    public void updateLaboratoryPnum(int id)throws Exception {
-        laboratoryDao.updateLaboratoryPnum(id);
-    }
-
-    public void updateLaboratoryType(int id)throws Exception {
-        laboratoryDao.updateLaboratoryType(id);
-=======
     @Override
     public void updateLaboratoryStatus(Integer status, Integer id) throws Exception {
         laboratoryDao.updateLaboratoryStatus(status, id);
@@ -54,7 +42,7 @@ public class LaboratoryServiceImpl implements LaboratoryService {
     @Override
     public void deleteById(Integer id) throws Exception {
         laboratoryDao.deleteById(id);
->>>>>>> 9678d55891996576cdba947d1aa268d3dec6e87e
+
     }
 
     @Override

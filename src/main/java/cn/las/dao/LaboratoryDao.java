@@ -9,13 +9,7 @@ import java.util.List;
 
 public interface LaboratoryDao {
 
-<<<<<<< HEAD
-    void updateLaboratoryState(@Param("id") int id) throws Exception;
 
-    void updateLaboratoryPnum(@Param("id") int id) throws Exception;
-
-    void updateLaboratoryType(@Param("id") int id) throws Exception;
-=======
     void updateLaboratoryStatus(@Param("status") Integer status, @Param("id") Integer id) throws Exception;
 
     void updateLaboratoryPnum(@Param("size") Integer size, @Param("id") Integer id) throws Exception;
@@ -32,5 +26,5 @@ public interface LaboratoryDao {
     void deleteById(Integer id) throws Exception;
 
     void addLaboratory(Laboratory laboratory) throws Exception;
->>>>>>> 9678d55891996576cdba947d1aa268d3dec6e87e
+
 }
