@@ -40,16 +40,4 @@ public interface ArrangeDao {
             "(laboratoryId, userId, courseId, weeks, sections, classes)" +
             " values(#{laboratoryId},#{userId},#{courseId},#{weeks},#{sections},#{classes})")
     void addArrange(Arrange arrange) throws Exception;
-
-    List<Arrange> selectAll(@Param("userId") int userId)throws Exception;
-
-    void deleteById(@Param("courseId") int courseId)throws Exception;
-
-    void updateArrangeById(@Param("courseId") int courseId)throws Exception;
-
-    void insertone(Arrange arrange)throws Exception;
-
-    List<Arrange> findArrangeByLaboratoryId(@Param("laboratoryId") int laboratoryId)throws Exception;
-
-    List<Arrange> findArrangeByCourseId(@Param("courseId") int courseId)throws Exception;
 }
