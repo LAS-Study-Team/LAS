@@ -1,12 +1,16 @@
 package cn.las.controller;
 
 import cn.las.domain.Arrange;
+import cn.las.domain.IClass;
 import cn.las.domain.Message;
 import cn.las.service.ArrangeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
@@ -29,9 +33,21 @@ public class ArrangeController {
     public Message findAll() throws Exception {
         Message message = new Message();
         List<Arrange> all = arrangeService.findAll();
+
         message.setCode(200);
         message.putData("AllArrange",all);
         message.setMessage("获取排课信息成功");
+
+        if(all == null){
+            message.setCode(201);
+            message.setMessage("不存在此课程");
+            return message;
+        }
+
+        message.setCode(203);
+        message.putData("AllArrange",all);
+        message.setMessage("目前没有任何排课");
+
         return message;
     }
 
@@ -46,6 +62,50 @@ public class ArrangeController {
     @ResponseBody
     public Message addArrange(@RequestBody Arrange arrange) throws Exception {
         Message message = new Message();
+
+        List<IClass> iClass=arrange.getIclasses();
+        String userId=String.valueOf(arrange.getUserId());
+        String laboratoryId=String.valueOf(arrange.getLaboratoryId());
+        String courseId=String.valueOf(arrange.getCourseId());
+        String weeks=arrange.getWeeks();
+        String sections=arrange.getSections();
+
+
+        //验证信息是否为空
+
+        if(userId == null){
+            message.setCode(100);
+            message.setMessage("教师id不能为空");
+            return message;
+        }
+
+        if(laboratoryId == null){
+            message.setCode(101);
+            message.setMessage("实验室id不能为空");
+            return message;
+        }
+
+        if(courseId == null){
+            message.setCode(102);
+            message.setMessage("课程id不能为空");
+            return message;
+        }
+
+        if(weeks == null){
+            message.setCode(103);
+            message.setMessage("上课周数不能为空");
+            return message;
+        }
+
+        if(sections == null){
+            message.setCode(101);
+            message.setMessage("所选节数不能为空");
+            return message;
+        }
+
+
+        //验证课程是否冲突
+
         arrangeService.insertone(arrange);
         message.setCode(200);
         message.setMessage("增加排课成功");
@@ -64,6 +124,14 @@ public class ArrangeController {
     @ResponseBody
     public Message deleteArrangeById(@RequestParam int courseId)throws Exception{
         Message message = new Message();
+
+        List<Arrange> all = arrangeService.findArrangeByCourseId(courseId);
+        if(all == null){
+            message.setCode(204);
+            message.setMessage("没有此课程的排课情况");
+            return message;
+        }
+
         arrangeService.deleteArrangeByCourseId(courseId);
         message.setCode(200);
         message.setMessage("删除课程成功");
@@ -82,10 +150,17 @@ public class ArrangeController {
     @ResponseBody
     public Message updateArrangeById(@RequestParam int courseId)throws Exception{
         Message message = new Message();
+        List<Arrange> arrange = arrangeService.findArrangeByCourseId(courseId);
+
+        if(arrange == null){
+            message.setCode(201);
+            message.setMessage("不存在此课程");
+            return message;
+        }
+
         arrangeService.updateArrangeByCourseId(courseId);
         message.setCode(200);
         message.setMessage("修改课程成功");
-
         return message;
     }
 
@@ -102,13 +177,18 @@ public class ArrangeController {
     public Message findArrangeByLaboratoryId(@RequestParam int laboratoryId)throws Exception{
         Message message = new Message();
         List<Arrange> all = arrangeService.findArrangeByLaboratoryId(laboratoryId);
+
+        if(all == null){
+            message.setCode(202);
+            message.setMessage("此实验室未安排课程");
+            return message;
+        }
+
         message.setCode(200);
         message.putData("ArrangeByLaboratoryId",all);
         message.setMessage("获取排课信息成功");
 
         return message;
     }
-
-
 
 }

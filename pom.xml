@@ -225,6 +225,17 @@
       <version>2.3.8</version>
     </dependency>
 
+    <!--  导入AES加密算法依赖  -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.directory.studio</groupId>
+      <artifactId>org.apache.commons.codec</artifactId>
+      <version>1.8</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -253,6 +264,14 @@
         </configuration>
         <version>2.2</version>
       </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>6</source>
+                <target>6</target>
+            </configuration>
+        </plugin>
     </plugins>
   </build>
 </project>

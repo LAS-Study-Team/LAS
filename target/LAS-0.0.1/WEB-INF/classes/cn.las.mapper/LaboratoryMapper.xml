@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.las.mapper.Mapper">
+<mapper namespace="cn.las.dao.LaboratoryDao">
     
     <!-- 变更实验室是否可用 -->
-    <update id="updateLaboratoryState" parameterType="java.lang.Integer">
+    <update id="updateLaboratoryStatus" parameterType="java.lang.Integer">
         update laboratory
         set status=#{status} where id=#{id}
     </update>
@@ -12,13 +12,18 @@
     <!-- 变更实验室人数 -->
     <update id="updateLaboratoryPnum" parameterType="java.lang.Integer">
         update  laboratory
-        set `size`=#{size} where id=#{id}
+        set size=#{size} where id=#{id}
     </update>
 
     <!-- 变更实验室类型 -->
     <update id="updateLaboratoryType" parameterType="java.lang.Integer">
         update  laboratory
-        set `type`=#{type} where id=#{id}
+        set type=#{type} where id=#{id}
     </update>
+
+    <insert id="addLaboratory" parameterType="cn.las.domain.Laboratory">
+        insert into laboratory (name, type, size, location, status)
+        values(#{name}, #{type},#{size}, #{location},#{status})
+    </insert>
 
 </mapper>

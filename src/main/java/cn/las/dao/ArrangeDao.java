@@ -3,8 +3,13 @@ package cn.las.dao;
 import cn.las.domain.Arrange;
 import org.apache.ibatis.annotations.*;
 
+
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * 排课持久层
@@ -45,4 +50,6 @@ public interface ArrangeDao {
     void insertone(Arrange arrange)throws Exception;
 
     List<Arrange> findArrangeByLaboratoryId(@Param("laboratoryId") int laboratoryId)throws Exception;
+
+    List<Arrange> findArrangeByCourseId(@Param("courseId") int courseId)throws Exception;
 }

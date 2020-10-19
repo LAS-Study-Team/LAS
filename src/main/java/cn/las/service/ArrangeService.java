@@ -21,4 +21,6 @@ public interface ArrangeService {
     //通过实验室号查询排课情况
     List<Arrange> findArrangeByLaboratoryId(@Param("laboratoryId")int laboratory)throws Exception;
 
+    //通过课程号找到排课情况
+    List<Arrange> findArrangeByCourseId(@Param("courseId")int courseId)throws Exception;
 }

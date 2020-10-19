@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.las.mapper.CourseMapper">
+<mapper namespace="cn.las.dao.ArrangeDao">
 
     <!-- 根据教师id找到所有课程信息 -->
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
     <select id="selectAllByTeacherId" resultType="cn.las.domain.Arrange" parameterType="java.lang.Integer">
         select * from arrange where userid=#{userid}
     </select>
@@ -14,6 +18,10 @@
     </delete>
 
     <!-- 通过课程id修改排课 -->
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
     <update id="updateArrangeByCourseId" parameterType="java.lang.Integer">
         update arrang
         set laboratoryId=#{laboratoryId},userId=#{userId},courseId=#{courseId},weeks=#{weeks},sections=#{sections},classes=#{classes}
@@ -32,6 +40,10 @@
     <!-- 根据实验室id找到当前实验室排课情况 -->
     <select id="findArrangeByLaboratoryId" parameterType="java.lang.Integer" resultType="cn.las.domain.Arrange">
         select * from arrange where laboratoryId=#{laboratoryId}
+    </select>
+
+    <select id="findArrangeByCourseId" parameterType="java.lang.Integer" resultType="cn.las.domain.Arrange">
+        select * from arrange where courseId=#{courseId}
     </select>
 
 
