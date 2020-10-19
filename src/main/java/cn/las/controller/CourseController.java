@@ -1,5 +1,6 @@
 package cn.las.controller;
 
+import cn.las.mapper.CourseMapper;
 import cn.las.service.LaboratoryService;
 import cn.las.domain.Course;
 import cn.las.domain.Message;
@@ -114,6 +115,7 @@ public class CourseController {
         course.setName(name);
         course.setTime(time);
 
+        // 这里抛出的错误和上面的有重复
         try {
             courseService.addCourse(course);
         } catch (Exception e) {
@@ -173,7 +175,7 @@ public class CourseController {
     @ResponseBody
     public Message deleteById(@RequestBody Map<String, Object> datas) {
         Message message = new Message();
-        String sid = (String) datas.get("id");
+        Integer sid = (Integer) datas.get("id");
         if(sid == null) {
             message.setCode(500);
             message.setMessage("删除课程ID不能为空");
@@ -270,6 +272,15 @@ public class CourseController {
         }
         message.setCode(200);
         message.setMessage("修改课程信息成功");
+        return message;
+    }
+
+    @RequestMapping("selectAll")
+    @ResponseBody
+    public Message selectAll() throws Exception {
+        List<Course> courses = courseService.selectAll();
+        Message message = new Message(200, "获取课程信息成功");
+        message.putData("course", courses);
         return message;
     }
 }
