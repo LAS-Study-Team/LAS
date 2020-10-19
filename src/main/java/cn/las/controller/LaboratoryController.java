@@ -1,21 +1,29 @@
 package cn.las.controller;
 
+import cn.las.domain.Laboratory;
 import cn.las.domain.Message;
 import cn.las.mapper.LaboratoryMapper;
 import cn.las.service.LaboratoryService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("laboratory")
 public class LaboratoryController {
 
+    private static Logger logger = Logger.getLogger(LaboratoryController.class);
+
     @Autowired
     LaboratoryService laboratoryService;
 
-<<<<<<< HEAD
-=======
     /**
      * @param maps 前端传输的数据
      *          {
@@ -41,9 +49,19 @@ public class LaboratoryController {
             return message;
         }
 
+        try {
+            if(laboratoryService.findById(id) == null) throw new RuntimeException("实验室不存在");
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error(e.getMessage());
+            message.setMessage(e.getMessage());
+            message.setCode(501);
+            return message;
+        }
+
         // 更改实验室的状态信息
         try {
-            laboratoryService.updateLaboratoryStatus(status, id);
+            laboratoryService.updateLaboratoryStatus(id, status);
         } catch (Exception e) {
             e.printStackTrace();
             logger.warn(e.getMessage());
@@ -56,25 +74,7 @@ public class LaboratoryController {
         message.setMessage("实验室状态更新成功");
         return message;
     }
->>>>>>> fa89e733f196db1d9e4899561c623dced027cc3d
 
-    /**
-     * @param id 实验室id
-     * @return  返回成功 | 失败信息
-     * @throws Exception
-     *
-     * 更新实验室状态
-     */
-    public Message updateLaboratoryState(int id)throws Exception{
-        Message message = new Message();
-        laboratoryService.updateLaboratoryState(id);
-        message.setCode(200);
-        message.setMessage("实验室状态更新成功");
-        return message;
-    }
-
-<<<<<<< HEAD
-=======
     /**
      *
      * @param maps  前端传输的数据
@@ -99,10 +99,9 @@ public class LaboratoryController {
         String type = (String) maps.get("type");
         Integer size = (Integer) maps.get("size");
         String location = (String) maps.get("location");
-        Integer status = (Integer) maps.get("status");
 
         // 非空验证
-        if(name == null || type == null || size == null || location == null || status == null) {
+        if(name == null || type == null || size == null || location == null) {
             message.setCode(403);
             message.setMessage("参数有误");
             return message;
@@ -113,13 +112,14 @@ public class LaboratoryController {
         lab.setLocation(location);
         lab.setName(name);
         lab.setSize(size);
-        lab.setStatus(status);
+        lab.setStatus(1);
         lab.setType(type);
 
         // 添加实验室信息
         try {
             laboratoryService.addLaboratory(lab);
         } catch (Exception e) {
+            e.printStackTrace();
             logger.warn(e.getMessage());
             message.setCode(401);
             message.setMessage("数据冲突");
@@ -216,5 +216,79 @@ public class LaboratoryController {
         message.setCode(200);
         return message;
     }
->>>>>>> fa89e733f196db1d9e4899561c623dced027cc3d
+
+
+    @RequestMapping("findAll")
+    @ResponseBody
+    public Message findAll() {
+        Message message = new Message();
+
+        List<Laboratory> all = null;
+        try {
+            all = laboratoryService.findAll();
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error(e.getMessage());
+            message.setCode(500);
+            message.setMessage("获取实验室信息失败");
+            return message;
+        }
+
+        message.setCode(200);
+        message.setMessage("获取实验室信息成功");
+        message.putData("labs", all);
+        return message;
+    }
+
+
+    /**
+     * @param maps 前端传输的数据
+     *          {
+     *              id:...,
+     *              size:...
+     *          }
+     * @return
+     * @throws Exception
+     *
+     * 修改实验室状态信息，status=0 不可用 | 可用
+     */
+    @RequestMapping(value = "updateSize", method = RequestMethod.POST)
+    @ResponseBody
+    public Message updateLaboratorySize(@RequestBody Map<String, Object> maps) {
+        Message message = new Message();
+
+        // 进行非空验证
+        Integer id = (Integer) maps.get("id");
+        Integer size = (Integer) maps.get("size");
+        if (id == null || size == null) {
+            message.setCode(403);
+            message.setMessage("参数信息有误");
+            return message;
+        }
+
+        try {
+            if (laboratoryService.findById(id) == null) throw new RuntimeException("实验室不存在");
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error(e.getMessage());
+            message.setMessage(e.getMessage());
+            message.setCode(501);
+            return message;
+        }
+
+        // 更改实验室的状态信息
+        try {
+            laboratoryService.updateLaboratoryPnum(id, size);
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.warn(e.getMessage());
+            message.setMessage("更改实验室人数信息失败");
+            message.setCode(501);
+            return message;
+        }
+
+        message.setCode(200);
+        message.setMessage("实验室人数更新成功");
+        return message;
+    }
 }

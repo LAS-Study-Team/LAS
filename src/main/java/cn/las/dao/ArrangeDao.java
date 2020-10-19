@@ -17,17 +17,6 @@ import org.apache.ibatis.annotations.Select;
 public interface ArrangeDao {
 
     @Select("select * from arrange")
-    @Results({
-            @Result(id = true, property = "id", column = "id"),
-            @Result(property = "laboratoryId", column = "laboratoryId"),
-            @Result(property = "laboratoryId", column = "laboratoryId"),
-            @Result(property = "laboratoryId", column = "laboratoryId"),
-            @Result(property = "laboratoryId", column = "laboratoryId"),
-            @Result(property = "laboratoryId", column = "laboratoryId"),
-            @Result(property = "laboratoryId", column = "laboratoryId"),
-            @Result(property = "laboratoryId", column = "laboratoryId"),
-            @Result(property = "laboratoryId", column = "laboratoryId")
-    })
     List<Arrange> findAll() throws Exception;
 
     @Select("select * from arrange where userId in (select id from user where teacher=#{teacherName})")

@@ -41,11 +41,7 @@ public class CourseController {
         return message;
     }
 
-    /**
-<<<<<<< HEAD
-=======
-     * @return 返回带有所有course的mesage
->>>>>>> dev
+    /**s
      * @return 返回带有所有course的 message
      * @throws Exception
      *
@@ -154,10 +150,7 @@ public class CourseController {
 
         Course course = null;
         course = courseService.findCourseByCourseName(name);
-<<<<<<< HEAD
-=======
 
->>>>>>> dev
         message.putData("course", course);
         message.setCode(200);
         message.setMessage("获取课程成功");
@@ -223,31 +216,6 @@ public class CourseController {
         Integer id = (Integer) maps.get("id");
         String name = (String) maps.get("name");
         Integer time = (Integer) maps.get("time");
-<<<<<<< HEAD
-=======
-
-        if(id == null || name == null || time == null) {
-            message.setCode(501);
-            message.setMessage("参数不能为空");
-            return message;
-        }
-
-        // 封装课程信息
-        Course course = new Course();
-        course.setTime(time);
-        course.setId(id);
-        course.setName(name);
-
-        // 更新课程信息
-        try {
-            courseService.updateCourse(course);
-        } catch (Exception e) {
-            logger.error(e.getMessage());
-            message.setCode(500);
-            message.setMessage("更新信息失败:" + e.getMessage());
-            return message;
-        }
->>>>>>> dev
 
         if(id == null || name == null || time == null) {
             message.setCode(501);

@@ -126,10 +126,6 @@ public class Arrange {
         this.laboratory = laboratory;
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
     public List<IClass> getIclasses() {
         return iclasses;
     }

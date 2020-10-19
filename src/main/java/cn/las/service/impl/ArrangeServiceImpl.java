@@ -41,6 +41,6 @@ public class ArrangeServiceImpl implements ArrangeService {
     }
 
     public List<Arrange> findArrangeByCourseId(int courseId)throws Exception{
-        return arrangeDao.findArrangeByCourseId(courseId);
+        return arrangeMapper.findArrangeByCourseId(courseId);
     }
 }
