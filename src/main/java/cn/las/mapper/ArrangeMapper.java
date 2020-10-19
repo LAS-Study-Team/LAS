@@ -17,4 +17,6 @@ public interface ArrangeMapper {
     List<Arrange> findArrangeByLaboratoryId(@Param("laboratoryId") int laboratoryId)throws Exception;
 
     List<Arrange> findArrangeByCourseId(@Param("courseId") int courseId)throws Exception;
+
+    List<Arrange> findArrangeByweek(@Param("weeks") String weeks)throws Exception;
 }

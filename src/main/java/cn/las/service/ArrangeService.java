@@ -23,4 +23,7 @@ public interface ArrangeService {
 
     //通过课程号找到排课情况
     List<Arrange> findArrangeByCourseId(@Param("courseId")int courseId)throws Exception;
+
+    //根据周数查看所有排课信息（可能不需要，先保留）
+    List<Arrange> findArrangeByweek(@Param("weeks")String weeks)throws Exception;
 }

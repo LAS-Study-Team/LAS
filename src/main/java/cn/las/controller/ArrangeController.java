@@ -4,6 +4,7 @@ import cn.las.domain.Arrange;
 import cn.las.domain.IClass;
 import cn.las.domain.Message;
 import cn.las.service.ArrangeService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -19,6 +23,8 @@ import java.util.List;
 @Controller
 @RequestMapping("arrange")
 public class ArrangeController {
+
+    private static Logger logger = Logger.getLogger(CourseController.class);
 
     // 注入arrange服务层对象
     @Autowired
@@ -32,21 +38,25 @@ public class ArrangeController {
     @ResponseBody
     public Message findAll() throws Exception {
         Message message = new Message();
-        List<Arrange> all = arrangeService.findAll();
+        List<Arrange> all = null;
+        try {
+            all = arrangeService.findAll();
+        }catch (Exception e){
+            logger.error(e.getMessage());
+            message.setCode(205);
+            message.setMessage("获取排课信息失败");
+            return message;
+        }
+
+        if(all == null){
+            message.setCode(201);
+            message.setMessage("不存在任何课程");
+            return message;
+        }
 
         message.setCode(200);
         message.putData("AllArrange",all);
         message.setMessage("获取排课信息成功");
-
-        if(all == null){
-            message.setCode(201);
-            message.setMessage("不存在此课程");
-            return message;
-        }
-
-        message.setCode(203);
-        message.putData("AllArrange",all);
-        message.setMessage("目前没有任何排课");
 
         return message;
     }
@@ -104,9 +114,18 @@ public class ArrangeController {
         }
 
 
-        //验证课程是否冲突
+        //验证排课是否冲突
 
-        arrangeService.insertone(arrange);
+
+        try {
+            arrangeService.insertone(arrange);
+        }catch (Exception e){
+            logger.error(e.getMessage());
+            message.setCode(203);
+            message.setMessage("增加排课信息失败");
+            return message;
+        }
+
         message.setCode(200);
         message.setMessage("增加排课成功");
 
@@ -190,5 +209,43 @@ public class ArrangeController {
 
         return message;
     }
+
+
+    /**
+     * @param weeks 教学周数
+     * @return  返回带有某实验室排课arranges的message
+     * @throws Exception
+     *
+     * 根据教学周查询排课情况（可能不需要，先保留）
+     */
+    @RequestMapping(value = "findArrangeByweek", method = RequestMethod.POST)
+    @ResponseBody
+    public Message findArrangeByweek(@RequestParam String weeks)throws Exception{
+        Message message = new Message();
+
+        List<Arrange> all = arrangeService.findAll();
+        List<Arrange> some = new ArrayList<Arrange>();
+
+        for(Arrange s : all){
+            String []week = s.getWeeks().split(",");
+            if(Arrays.asList(week).contains(weeks))
+                some.add(s);
+        }
+
+        if (some.isEmpty()){
+            message.setCode(210);
+            message.setMessage("当前周没有任何排课");
+            return message;
+        }
+
+        message.setCode(200);
+        message.putData("findArrangeByweek",some);
+        message.setMessage("获取当前周排课成功");
+
+        return message;
+    }
+
+
+
 
 }

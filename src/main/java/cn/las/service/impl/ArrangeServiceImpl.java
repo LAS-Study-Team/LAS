@@ -43,4 +43,9 @@ public class ArrangeServiceImpl implements ArrangeService {
     public List<Arrange> findArrangeByCourseId(int courseId)throws Exception{
         return arrangeMapper.findArrangeByCourseId(courseId);
     }
+
+    //可能不需要（先保留）
+    public List<Arrange> findArrangeByweek(String weeks)throws Exception{
+        return arrangeMapper.findArrangeByweek(weeks);
+    }
 }
