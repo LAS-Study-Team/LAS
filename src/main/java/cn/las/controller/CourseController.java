@@ -4,12 +4,10 @@ import cn.las.service.LaboratoryService;
 import cn.las.domain.Course;
 import cn.las.domain.Message;
 import cn.las.service.CourseService;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import javax.mail.MessageAware;
 import java.util.List;
 import java.util.Map;
 

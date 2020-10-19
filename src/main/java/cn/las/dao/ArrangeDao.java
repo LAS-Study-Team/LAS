@@ -40,9 +40,9 @@ public interface ArrangeDao {
 
     void deleteById(@Param("courseId") int courseId)throws Exception;
 
-    void updateById(@Param("courseId") int courseId)throws Exception;
+    void updateArrangeById(@Param("courseId") int courseId)throws Exception;
 
     void insertone(Arrange arrange)throws Exception;
 
-    Arrange findById(@Param("laboratoryId") int laboratoryId)throws Exception;
+    List<Arrange> findArrangeByLaboratoryId(@Param("laboratoryId") int laboratoryId)throws Exception;
 }
