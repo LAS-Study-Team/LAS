@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 public interface LaboratoryDao {
+<<<<<<< HEAD
 
 
     void updateLaboratoryStatus(@Param("status") Integer status, @Param("id") Integer id) throws Exception;
@@ -16,15 +17,20 @@ public interface LaboratoryDao {
 
     void updateLaboratoryType(@Param("type") Integer type, @Param("id") Integer id) throws Exception;
 
+=======
+>>>>>>> 44324db9295fcaf41f48c98c0c1e3d77e0286b40
     @Select("select * from laboratory")
     List<Laboratory> findAll() throws Exception;
 
-    @Select("select * from laboatory where laboratory.id=#{id}")
+    @Select("select * from laboratory where laboratory.id=#{id}")
     Laboratory findById(Integer id) throws Exception;
 
     @Delete("delete from laboratory where laboratory.id=#{id}")
     void deleteById(Integer id) throws Exception;
+<<<<<<< HEAD
 
     void addLaboratory(Laboratory laboratory) throws Exception;
 
+=======
+>>>>>>> 44324db9295fcaf41f48c98c0c1e3d77e0286b40
 }

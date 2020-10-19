@@ -18,4 +18,6 @@ public interface CourseService {
     List<Course> findAll() throws Exception;
 
     void updateCourse(Course course) throws Exception;
+
+    List<Course> selectAll() throws Exception;
 }
