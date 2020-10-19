@@ -4,6 +4,7 @@ import cn.las.domain.Message;
 import cn.las.domain.User;
 import cn.las.service.UserService;
 import cn.las.utils.AESUtil;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import java.util.List;
 import java.util.Map;
 
@@ -44,6 +44,8 @@ import java.util.Map;
 @Controller
 @RequestMapping("user")
 public class UserController {
+
+    private static Logger logger = Logger.getLogger(UserController.class);
 
     @Autowired
     UserService userService;
@@ -124,20 +126,40 @@ public class UserController {
     @RequestMapping(value = "addUser", method = RequestMethod.POST)
     @ResponseBody
     @Transactional(rollbackFor = Exception.class)
-    public Message addUser(@RequestBody User user) throws Exception {
+    public Message addUser(@RequestBody User user) {
         Message message = new Message();
 
         if(user.getUsername() == null || user.getPassword() == null || user.getTeacher() == null) {
             message.setCode(500);
-            message.setMessage("参数不能为空");
+            message.setMessage("参数有误");
             return message;
         }
 
+        // 查询当前账户是否已经被使用
+        try {
+            User u = userService.findByUsername(user.getUsername());
+            if(u != null) throw new RuntimeException("用户已存在");
+        } catch (Exception e) {
+            message.setCode(403);
+            message.setMessage(e.getMessage());
+            return message;
+        }
+
+        // 对密码进行加密
+        user.setPassword(AESUtil.encrypt(user.getPassword()));
+
         // 增加用户
-        userService.addUser(user);
+        try {
+            userService.addUser(user);
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            message.setCode(403);
+            message.setMessage("账户已存在");
+            return message;
+        }
 
         message.setCode(200);
-        message.setMessage("添加用户信息");
+        message.setMessage("添加用户信息成功");
         return message;
     }
 
@@ -161,12 +183,12 @@ public class UserController {
 
         // 获取参数
         String oldPassword = (String) datas.get("old_password");
-        String username = (String) datas.get("account");
+        String username = (String) datas.get("username");
         String newPassword = (String) datas.get("new_password");
 
         if(username == null || oldPassword == null || newPassword == null) {
             message.setCode(501);
-            message.setMessage("参数不能为空");
+            message.setMessage("参数有误");
             return message;
         }
 
@@ -193,5 +215,4 @@ public class UserController {
         message.setMessage("修改密码成功");
         return message;
     }
-
 }

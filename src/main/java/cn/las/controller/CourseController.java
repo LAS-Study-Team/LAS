@@ -80,11 +80,7 @@ public class CourseController {
     @RequestMapping(value = "addCourse", method = RequestMethod.POST)
     @ResponseBody
     public Message addCourse(@RequestBody Map<String, Object> maps) throws Exception {
-
-        for(String key : maps.keySet()) {
-            System.out.println(maps.get(key));
-        }
-
+        
         Message message = new Message();
 
         // 获取课程信息
@@ -235,6 +231,7 @@ public class CourseController {
             message.setMessage("更新信息失败:" + e.getMessage());
             return message;
         }
+
         message.setCode(200);
         message.setMessage("修改课程信息成功");
         return message;

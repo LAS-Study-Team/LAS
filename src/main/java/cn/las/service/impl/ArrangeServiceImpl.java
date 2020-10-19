@@ -19,6 +19,19 @@ public class ArrangeServiceImpl implements ArrangeService {
         return arrangeDao.findAll();
     }
 
+    public void deleteArrangeByCourseId(int courseId)throws Exception{
+        arrangeDao.deleteById(courseId);
+    }
 
+    public void insertone(Arrange arrange)throws Exception{
+        arrangeDao.insertone(arrange);
+    }
 
+    public void updateArrangeByCourseId(int courseId)throws Exception{
+        arrangeDao.updateArrangeById(courseId);
+    }
+
+    public List<Arrange> findArrangeByLaboratoryId(int laboratoryId)throws Exception{
+        return arrangeDao.findArrangeByLaboratoryId(laboratoryId);
+    }
 }

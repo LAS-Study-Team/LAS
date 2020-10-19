@@ -236,9 +236,6 @@
       <artifactId>org.apache.commons.codec</artifactId>
       <version>1.8</version>
     </dependency>
-
-
-
   </dependencies>
 
   <build>

@@ -126,7 +126,6 @@ public class Arrange {
         this.laboratory = laboratory;
     }
 
-
     public List<IClass> getIclasses() {
         return iclasses;
     }
