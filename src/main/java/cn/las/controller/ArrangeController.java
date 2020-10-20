@@ -73,12 +73,11 @@ public class ArrangeController {
     public Message addArrange(@RequestBody Arrange arrange) throws Exception {
         Message message = new Message();
 
-        List<IClass> iClass=arrange.getIclasses();
         String userId=String.valueOf(arrange.getUserId());
         String laboratoryId=String.valueOf(arrange.getLaboratoryId());
         String courseId=String.valueOf(arrange.getCourseId());
-        String weeks=arrange.getWeeks();
-        String sections=arrange.getSections();
+        String weeks=String.valueOf(arrange.getWeek());
+        String sections=String.valueOf(arrange.getSection());
 
 
         //验证信息是否为空
@@ -144,14 +143,29 @@ public class ArrangeController {
     public Message deleteArrangeById(@RequestParam int courseId)throws Exception{
         Message message = new Message();
 
-        List<Arrange> all = arrangeService.findArrangeByCourseId(courseId);
+        List<Arrange> all = null;
+        try {
+            all = arrangeService.findArrangeByCourseId(courseId);
+        }catch (Exception e){
+            logger.error(e.getMessage());
+            message.setCode(207);
+            message.setMessage("查询此课程的排课情况失败");
+            return message;
+        }
         if(all == null){
             message.setCode(204);
             message.setMessage("没有此课程的排课情况");
             return message;
         }
 
-        arrangeService.deleteArrangeByCourseId(courseId);
+        try {
+            arrangeService.deleteArrangeByCourseId(courseId);
+        }catch (Exception e){
+            logger.error(e.getMessage());
+            message.setCode(208);
+            message.setMessage("删除此课程排课信息失败");
+            return message;
+        }
         message.setCode(200);
         message.setMessage("删除课程成功");
 
@@ -169,9 +183,17 @@ public class ArrangeController {
     @ResponseBody
     public Message updateArrangeById(@RequestParam int courseId)throws Exception{
         Message message = new Message();
-        List<Arrange> arrange = arrangeService.findArrangeByCourseId(courseId);
+        List<Arrange> all = null;
+        try {
+            all = arrangeService.findArrangeByCourseId(courseId);
+        }catch (Exception e){
+            logger.error(e.getMessage());
+            message.setCode(207);
+            message.setMessage("查询此课程的排课情况失败");
+            return message;
+        }
 
-        if(arrange == null){
+        if(all == null){
             message.setCode(201);
             message.setMessage("不存在此课程");
             return message;
@@ -195,7 +217,15 @@ public class ArrangeController {
     @ResponseBody
     public Message findArrangeByLaboratoryId(@RequestParam int laboratoryId)throws Exception{
         Message message = new Message();
-        List<Arrange> all = arrangeService.findArrangeByLaboratoryId(laboratoryId);
+        List<Arrange> all = null;
+        try {
+            all = arrangeService.findArrangeByLaboratoryId(laboratoryId);
+        }catch (Exception e){
+            logger.error(e.getMessage());
+            message.setCode(208);
+            message.setMessage("查询此实验室的排课情况失败");
+            return message;
+        }
 
         if(all == null){
             message.setCode(202);
@@ -220,14 +250,22 @@ public class ArrangeController {
      */
     @RequestMapping(value = "findArrangeByweek", method = RequestMethod.POST)
     @ResponseBody
-    public Message findArrangeByweek(@RequestParam String weeks)throws Exception{
+    public Message findArrangeByweek(@RequestParam int weeks)throws Exception{
         Message message = new Message();
 
-        List<Arrange> all = arrangeService.findAll();
+        List<Arrange> all = null;
+        try {
+            all = arrangeService.findAll();
+        }catch (Exception e){
+            logger.error(e.getMessage());
+            message.setCode(206);
+            message.setMessage("获取排课信息失败");
+            return message;
+        }
         List<Arrange> some = new ArrayList<Arrange>();
 
         for(Arrange s : all){
-            String []week = s.getWeeks().split(",");
+            int week = s.getWeek();
             if(Arrays.asList(week).contains(weeks))
                 some.add(s);
         }

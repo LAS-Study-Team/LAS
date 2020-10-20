@@ -4,8 +4,8 @@
 <mapper namespace="cn.las.mapper.ArrangeMapper">
 
     <!-- 通过教学周查当前周排课情况（可能不需要，先保留）-->
-    <select id="findArrangeByweek" parameterType="java.lang.String" resultType="cn.las.domain.Arrange">
-        select * from arrange where weeks=#{weeks}
+    <select id="findArrangeByweek" parameterType="java.lang.Integer" resultType="cn.las.domain.Arrange">
+        select * from arrange where week=#{weeks}
     </select>
     
     <!-- 根据教师id找到所有课程信息 -->
@@ -21,13 +21,13 @@
     <!-- 通过课程id修改排课 -->
     <update id="updateArrangeByCourseId" parameterType="java.lang.Integer">
         update arrang
-        set laboratoryId=#{laboratoryId},userId=#{userId},courseId=#{courseId},weeks=#{weeks},sections=#{sections},classes=#{classes}
+        set laboratoryId=#{laboratoryId},userId=#{userId},courseId=#{courseId},week=#{weeks},`section`=#{sections},classId=#{classes}
         where id=#{id}
     </update>
 
     <!-- 增加排课 -->
     <insert id="insertone" parameterType="cn.las.domain.Arrange">
-        insert into arrang(laboratoryId,userId,courseId,weeks,sections,classes)
+        insert into arrang(laboratoryId,userId,courseId,week,`section`,classId)
          values (#{laboratoryId},#{userId},#{courseId},#{weeks},#{sections},#{classes})
     </insert>
 
@@ -38,6 +38,7 @@
         select * from arrange where laboratoryId=#{laboratoryId}
     </select>
 
+    <!-- 根据课程id找到当前课程排课情况-->
     <select id="findArrangeByCourseId" parameterType="java.lang.Integer" resultType="cn.las.domain.Arrange">
         select * from arrange where courseId=#{courseId}
     </select>

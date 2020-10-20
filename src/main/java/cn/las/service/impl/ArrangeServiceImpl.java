@@ -45,7 +45,7 @@ public class ArrangeServiceImpl implements ArrangeService {
     }
 
     //可能不需要（先保留）
-    public List<Arrange> findArrangeByweek(String weeks)throws Exception{
+    public List<Arrange> findArrangeByweek(int weeks)throws Exception{
         return arrangeMapper.findArrangeByweek(weeks);
     }
 }

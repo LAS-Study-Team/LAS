@@ -13,36 +13,28 @@ public class Arrange {
 
     private int id;
 
-    private Laboratory laboratory;
-
-    private User user;
-
-    private Course course;
-
-    private List<IClass> iclasses;
-
     private int laboratoryId;
 
     private int userId;
 
     private int courseId;
 
-    private String weeks;
+    private int week;
 
-    private String sections;
+    private int section;
 
-    private String classes;
+    private int classId;
 
     @Override
     public String toString() {
         return "Arrange{" +
                 "id=" + id +
-                ", laboratory=" + laboratory +
-                ", user=" + user +
-                ", course=" + course +
-                ", weeks='" + weeks + '\'' +
-                ", sections='" + sections + '\'' +
-                ", classes='" + classes + '\'' +
+                ", laboratoryId=" + laboratoryId +
+                ", userId=" + userId +
+                ", courseId=" + courseId +
+                ", week=" + week +
+                ", section=" + section +
+                ", classId=" + classId +
                 '}';
     }
 
@@ -52,22 +44,6 @@ public class Arrange {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Course getCourse() {
-        return course;
-    }
-
-    public void setCourse(Course course) {
-        this.course = course;
     }
 
     public int getLaboratoryId() {
@@ -94,43 +70,27 @@ public class Arrange {
         this.courseId = courseId;
     }
 
-    public String getWeeks() {
-        return weeks;
+    public int getWeek() {
+        return week;
     }
 
-    public void setWeeks(String weeks) {
-        this.weeks = weeks;
+    public void setWeek(int week) {
+        this.week = week;
     }
 
-    public String getSections() {
-        return sections;
+    public int getSection() {
+        return section;
     }
 
-    public void setSections(String sections) {
-        this.sections = sections;
+    public void setSection(int section) {
+        this.section = section;
     }
 
-    public String getClasses() {
-        return classes;
+    public int getClassId() {
+        return classId;
     }
 
-    public void setClasses(String classes) {
-        this.classes = classes;
-    }
-
-    public Laboratory getLaboratory() {
-        return laboratory;
-    }
-
-    public void setLaboratory(Laboratory laboratory) {
-        this.laboratory = laboratory;
-    }
-
-    public List<IClass> getIclasses() {
-        return iclasses;
-    }
-
-    public void setIclasses(List<IClass> iclasses) {
-        this.iclasses = iclasses;
+    public void setClassId(int classId) {
+        this.classId = classId;
     }
 }
