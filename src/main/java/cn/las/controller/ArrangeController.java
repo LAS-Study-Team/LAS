@@ -2,8 +2,10 @@ package cn.las.controller;
 
 import cn.las.domain.Arrange;
 import cn.las.domain.IClass;
+import cn.las.domain.Laboratory;
 import cn.las.domain.Message;
 import cn.las.service.ArrangeService;
+import cn.las.service.LaboratoryService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,9 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * 关于选课的控制器
@@ -29,6 +29,9 @@ public class ArrangeController {
     // 注入arrange服务层对象
     @Autowired
     ArrangeService arrangeService;
+
+    @Autowired
+    LaboratoryService laboratoryService;
 
     /**
      * 查询所有的排课信息
@@ -284,6 +287,213 @@ public class ArrangeController {
     }
 
 
+    /**
+     * @param maps
+     * {
+     *     type:...,
+     *     weeks:...,
+     *     day:...,
+     *     sections:...
+     * }
+     * @return
+     *
+     * 1、按照指定的周数（weeks）、周几（day）、课程的节数（sections）和教室类型（type）获取可用的教室
+     *      要求前端给的数据是本课的排课周数，周几和第几节
+     * 2、不指定教室的号，按照指定的信息获取合适的教室让教师自己选
+     * 3、选好课之后再次提交，添加排课信息
+     *
+     * 周数可（weeks）多选，周几（days）可多选，课程的节数（section）可多选但是最多两节，教室的类型（type）单选
+     */
+    @RequestMapping("findEmpLabByTWDS")
+    @ResponseBody
+    public Message findEmptyLabByTypeWeekDayAndSection(@RequestBody Map<String, Object> maps) {
+        Message message = new Message();
+
+        //获取参数信息
+        String week = (String) maps.get("weeks");
+        Integer day = (Integer) maps.get("day");
+        String section = (String) maps.get("sections");
+        String type = (String) maps.get("type");
+
+        //非空验证
+        if(week == null || section == null || type == null || day == null) {
+            message.setCode(403);
+            message.setMessage("参数不能为空");
+            return message;
+        }
+
+        // 进行数据的处理
+        List<Integer> weeks = new ArrayList<Integer>();
+        for (String s : week.split(",")) {
+            weeks.add(Integer.valueOf(s));
+        }
+
+        List<Integer> sections = new ArrayList<Integer>();
+        for (String s : section.split(",")) {
+            sections.add(Integer.valueOf(s));
+        }
+
+        // 进行教室的查询
+        try {
+            List<Laboratory> laboratories = arrangeService.findEmptyLabByTypeAndWeeksAndDayAndSections(
+                    type, weeks, day, sections
+            );
+            message.putData("laboratories", laboratories);
+        } catch (Exception e) {
+            e.printStackTrace();
+            message.setMessage("查询空闲课程失败-系统错误");
+            message.setCode(500);
+            return message;
+        }
+
+        message.setCode(200);
+        message.setMessage("获取空实验室信息成功");
+        return message;
+    }
+
+
+    /**
+     * @param maps
+     * {
+     *     weeks:...,
+     *     id:...,
+     *     day:...
+     * }
+     * @return
+     *
+     * 1、教师选定第几周到第几周，每周的周几，选定教室，但是不指定节数
+     * 2、后台查询数据库，查看这天有几节课是闲置的
+     * 3、返回可用的节数
+     *
+     * 如果出现冲突，返回错误码，前端负责页面的跳转
+     */
+    @RequestMapping("findEmpLabByIdAndWD")
+    @ResponseBody
+    public Message findEmptyLabByLabIdAndWeeksAndDay(@RequestBody Map<String, Object> maps) {
+        Message message = new Message();
+
+        //获取参数信息
+        String week = (String) maps.get("weeks");
+        Integer id = (Integer) maps.get("id");
+        Integer day = (Integer) maps.get("day");
+
+        //非空验证
+        if(week == null || id == null || day == null) {
+            message.setCode(403);
+            message.setMessage("参数不能为空");
+            return message;
+        }
+
+        // 封装weeks数据
+        List<Integer> weeks = new ArrayList<Integer>();
+        for (String s : week.split(",")) {
+            weeks.add(Integer.valueOf(s));
+        }
+
+        try {
+            Set<Integer> empty = arrangeService.findSectionsByWeeksAndDay(weeks, day);
+
+            // 如果empty是空的，那么准备返回课程冲突信息
+            if(empty == null) {
+                message.setCode(502);
+                message.setMessage("无空闲课程");
+                return message;
+            }
+
+            // 否则直接返回
+            message.putData("emptySections", empty);
+        } catch (Exception e) {
+            e.printStackTrace();
+            message.setMessage("服务器错误");
+            message.setCode(500);
+            return message;
+        }
+
+        // 进行教室的查询--按照教室号和周数
+
+
+        message.setCode(200);
+        message.setMessage("获取空实验室信息成功");
+        return message;
+    }
+
+    /**
+     * @param maps
+     * {
+     *     weeks:...,
+     *     day:...
+     * }
+     * @return
+     *
+     * 查询某几周的某一天可用的时间段
+     */
+    @RequestMapping(value = "findSectionsByWD", method = RequestMethod.POST)
+    @ResponseBody
+    public Message findEnableSectionsByWeeksAndDay(@RequestBody Map<String, Object> maps) {
+        Message message = new Message();
+
+        // 获取数据
+        String week = (String) maps.get("weeks");
+        Integer day = (Integer) maps.get("day");
+
+        //非空验证
+        if(week == null || day == null) {
+            message.setCode(403);
+            message.setMessage("参数非空");
+            return message;
+        }
+
+        // 进行可用时间段查询
+
+
+        message.setCode(200);
+        message.setMessage("查询成功");
+        return message;
+    }
+
+    @RequestMapping("findArrangeByWDS")
+    @ResponseBody
+    public Message findArrangeByWeekDayAndSection(@RequestBody Map<String, Object> maps) {
+        Message message = new Message();
+
+        // 进行非空验证
+        Integer week = (Integer) maps.get("week");
+        Integer day = (Integer) maps.get("day");
+        Integer section = (Integer) maps.get("section");
+
+        if(week == null || day == null || section == null) {
+            message.setCode(403);
+            message.setMessage("参数不能为空");
+            return message;
+        }
+
+        // 获取教室安排信息
+        try {
+            Arrange arrange = arrangeService.findArrangeByWeekAndDayAndSection(week, day, section);
+            message.putData("arrange", arrange);
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error(e.getMessage());
+            message.setCode(500);
+            message.setMessage("查询排课数据失败");
+            return message;
+        }
+
+        message.setCode(200);
+        message.setMessage("获取教室安排成功");
+        return message;
+    }
+
+
+    /**
+     * @爱出bug的代码小白
+     * 后面思考的
+     *
+     * 1、能否实现教师指定第几周到第几周上课，指定周几，教室的类型，之后返回可安排的教室
+     * 2、能否实现教师指定第几周到第几周上课，指定教室，返回可安排的周数和可安排的节数
+     * 3、能否实现教师指定第几周到第几周上课，指定周几，指定教室类型，返回可安排的教室和可安排的节数
+     * 4、能否实现教师指定第几周到第几周上课，指定周几，指定教室类型，返回可安排的教室和可安排的节数
+     */
 
 
 }

@@ -1,9 +1,11 @@
 package cn.las.service;
 
 import cn.las.domain.Arrange;
+import cn.las.domain.Laboratory;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Set;
 
 public interface ArrangeService {
 
@@ -26,4 +28,19 @@ public interface ArrangeService {
 
     //根据周数查看所有排课信息（可能不需要，先保留）
     List<Arrange> findArrangeByweek(@Param("weeks")int weeks)throws Exception;
+
+    // 按照
+    List<Laboratory> findEmptyLabByTypeAndWeeksAndDayAndSections(
+            String type, List<Integer> weeks, Integer day, List<Integer> sections
+    ) throws Exception;
+
+    List<Integer> findEmptySectionsByLabIdAndWeeksAndDay (
+            Integer laboratoryId, List<Integer> weeks, Integer day
+    ) throws Exception;
+
+    // 按照所选周数和周几进行时间段查询
+    Set<Integer> findSectionsByWeeksAndDay(List<Integer> weeks, Integer day) throws Exception;
+
+    // 按照第几周、周几、节数查询这节课的安排
+    Arrange findArrangeByWeekAndDayAndSection(Integer week, Integer day, Integer section) throws Exception;
 }

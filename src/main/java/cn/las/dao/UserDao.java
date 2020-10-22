@@ -25,4 +25,7 @@ public interface UserDao {
 
     @Update("update user set user.password=#{password} where user.username=#{username}")
     void changePassword(@Param("username") String username, @Param("password") String password) throws Exception;
+
+    @Select("select username, teacher from user where id=#{id}")
+    User findUserInfoById(Integer id) throws Exception;
 }

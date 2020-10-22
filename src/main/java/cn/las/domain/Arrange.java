@@ -93,4 +93,45 @@ public class Arrange {
     public void setClassId(int classId) {
         this.classId = classId;
     }
+
+    private User user;
+
+    private Laboratory laboratory;
+
+    private IClass iClass;
+
+    private Course course;
+
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Laboratory getLaboratory() {
+        return laboratory;
+    }
+
+    public void setLaboratory(Laboratory laboratory) {
+        this.laboratory = laboratory;
+    }
+
+    public IClass getiClass() {
+        return iClass;
+    }
+
+    public void setiClass(IClass iClass) {
+        this.iClass = iClass;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
 }
