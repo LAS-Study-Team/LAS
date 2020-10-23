@@ -33,4 +33,9 @@ public class UserServiceImpl implements UserService {
     public void changePassword(String username, String password) throws Exception {
         userDao.changePassword(username, password);
     }
+
+    @Override
+    public User findUserInfoById(Integer id) throws Exception {
+        return userDao.findUserInfoById(id);
+    }
 }

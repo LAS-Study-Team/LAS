@@ -78,7 +78,7 @@ public class Laboratory {
     }
 
     public String getStatusStr() {
-        return status == 0 ? "可用" : "禁用";
+        return status == 0 ? "禁用" : "可用";
     }
 
     public void setStatusStr(String statusStr) {

@@ -42,5 +42,12 @@ public interface ArrangeService {
     Set<Integer> findSectionsByWeeksAndDay(List<Integer> weeks, Integer day) throws Exception;
 
     // 按照第几周、周几、节数查询这节课的安排
-    Arrange findArrangeByWeekAndDayAndSection(Integer week, Integer day, Integer section) throws Exception;
+    List<Arrange> findArrangeByWeekAndDayAndSection(Integer week, Integer day, Integer section) throws Exception;
+
+    // 按照周、周几、第几段 判断是否有课程冲突
+    List<Arrange> isEnableByWeeksAndDayAndSection(List<Integer> weeks, Integer day, Integer section) throws Exception;
+
+    void insertArrange(Arrange arrange) throws Exception;
+
+    void addArrange(Arrange arrange) throws Exception;
 }

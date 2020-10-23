@@ -19,4 +19,8 @@ public interface LaboratoryService {
     void deleteById(Integer id) throws Exception;
 
     void addLaboratory(Laboratory laboratory) throws Exception;
+
+    List<Laboratory> findByType(String type) throws Exception;
+
+    boolean isEnable(Integer id) throws Exception;
 }

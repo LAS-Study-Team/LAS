@@ -21,6 +21,8 @@ public class Arrange {
 
     private int week;
 
+    private int day;
+
     private int section;
 
     private int classId;
@@ -76,6 +78,14 @@ public class Arrange {
 
     public void setWeek(int week) {
         this.week = week;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
     }
 
     public int getSection() {

@@ -52,4 +52,14 @@ public class LaboratoryServiceImpl implements LaboratoryService {
     public void addLaboratory(Laboratory laboratory) throws Exception {
         laboratoryMapper.addLaboratory(laboratory);
     }
+
+    @Override
+    public List<Laboratory> findByType(String type) throws Exception {
+        return laboratoryDao.findByType(type);
+    }
+
+    @Override
+    public boolean isEnable(Integer id) throws Exception {
+        return laboratoryDao.findLaboratoryStatusById(id) == 0 ? false : true;
+    }
 }

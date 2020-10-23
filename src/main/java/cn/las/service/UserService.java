@@ -15,4 +15,6 @@ public interface UserService {
     List<User> findAll() throws Exception;
 
     void changePassword(String username, String password) throws Exception;
+
+    User findUserInfoById(Integer id) throws Exception;
 }

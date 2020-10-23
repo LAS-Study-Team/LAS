@@ -92,7 +92,22 @@ public class ArrangeServiceImpl implements ArrangeService {
     }
 
     @Override
-    public Arrange findArrangeByWeekAndDayAndSection(Integer week, Integer day, Integer section) throws Exception {
+    public List<Arrange> findArrangeByWeekAndDayAndSection(Integer week, Integer day, Integer section) throws Exception {
         return arrangeDao.findArrangeByWeekAndDayAndSection(week, day, section);
+    }
+
+    @Override
+    public List<Arrange> isEnableByWeeksAndDayAndSection(List<Integer> weeks, Integer day, Integer section) throws Exception {
+        return arrangeDao.isEnableByWeeksAndDayAndSection(weeks, day, section);
+    }
+
+    @Override
+    public void insertArrange(Arrange arrange) throws Exception {
+        arrangeDao.addArrange(arrange);
+    }
+
+    @Override
+    public void addArrange(Arrange arrange) throws Exception {
+        arrangeDao.addArrange(arrange);
     }
 }
